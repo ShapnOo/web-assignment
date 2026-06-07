@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — ShapnOo</title>
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- my css file -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- navbar at the top -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <!-- logo links to main site -->
+      <a href="https://shapno.info/?i=1" target="_blank" class="nav-logo">
+        Shapn<span>Oo</span>
+      </a>
+
+      <!-- navigation links -->
+      <ul class="nav-links">
+        <li><a href="https://shapno.info/?i=1">Home</a></li>
+        <li><a href="https://shapno.info/?i=1">About</a></li>
+        <li><a href="https://shapno.info/?i=1">Projects</a></li>
+        <li><a href="https://shapno.info/?i=1">Contact</a></li>
+      </ul>
+
+      <!-- download source code button -->
+      <a href="assets/files/Web_Programming_assignment_2.zip" download class="nav-cta">Download Source Code</a>
+
+    </div>
+  </nav>
+
+  <!-- success dialog shown after registration -->
+  <div class="dialog-overlay" id="dialogOverlay">
+    <div class="dialog-box">
+      <!-- checkmark icon -->
+      <div class="dialog-check">
+        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none"
+          stroke="#00e5b0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="9 12 11 14 15 10" />
+        </svg>
+      </div>
+      <h2 class="dialog-title" id="dialogTitle">Registration Complete!</h2>
+      <p class="dialog-subtitle">Want to explore the website?</p>
+      <a href="https://shapno.info/?i=1" target="_blank" class="dialog-btn">
+        Explore ShapnOo &rarr;
+      </a>
+      <button class="dialog-close" id="dialogClose">Maybe later</button>
+    </div>
+  </div>
+
+  <!-- main area where the form sits -->
+  <main class="main-content">
+    <div class="form-card">
+
+      <!-- form title -->
+      <div class="form-header">
+        <div class="header-text">
+          <h1>Create Account</h1>
+          <p>Fill in your details to get started</p>
+        </div>
+      </div>
+
+      <!-- registration form -->
+      <form id="registrationForm" novalidate>
+
+        <!-- full name and age in the same row -->
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <div class="input-wrapper">
+              <!-- user icon -->
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+              <input type="text" id="fullName" placeholder="John Doe" />
+            </div>
+            <span class="field-error" id="nameError">Name cannot be empty.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <div class="input-wrapper">
+              <!-- calendar icon -->
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </span>
+              <input type="number" id="age" placeholder="18 – 60" min="18" max="60" />
+            </div>
+            <span class="field-error" id="ageError">Must be between 18–60.</span>
+          </div>
+
+        </div>
+
+        <!-- email takes full width -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-wrapper">
+            <!-- envelope icon -->
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </span>
+            <input type="email" id="email" placeholder="john@gmail.com" />
+          </div>
+          <span class="field-error" id="emailError">Enter a valid email (e.g. user@gmail.com).</span>
+        </div>
+
+        <!-- password and confirm password side by side -->
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+              <!-- lock icon -->
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </span>
+              <input type="password" id="password" placeholder="Min. 6 chars" />
+            </div>
+            <span class="field-error" id="passwordError">At least 6 characters.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="input-wrapper">
+              <!-- shield/check lock icon -->
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg>
+              </span>
+              <input type="password" id="confirmPassword" placeholder="Repeat password" />
+            </div>
+            <span class="field-error" id="confirmPasswordError">Passwords do not match.</span>
+          </div>
+
+        </div>
+
+        <!-- submit button -->
+        <button type="submit" class="btn-submit" id="submitBtn">
+          Create Account &rarr;
+        </button>
+
+      </form>
+
+      <!-- assignment info at the bottom -->
+      <p class="form-footer">Tahmid Afsar (25315) &mdash; Web Programming &mdash; Jahangirnagar University</p>
+    </div>
+  </main>
+
+  <!-- javascript file -->
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
